@@ -1,0 +1,12 @@
+<h1><%= @task.title %></h1>
+<p><%= @task.details %></p>
+<%= check_box "task", "completed", {:checked => @task.completed, :disabled => true}%>
+<% if @task.completed == false %>
+<%= 'This task is not completed yet'  %>
+<% else %>
+<%= "This task is completed" %>
+<% end %><br>
+<%= link_to "Edit this task", edit_task_path %>
+
+<%= link_to "Back to list", tasks_path %>
+
